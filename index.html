@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmad Fajar A. — Konsultan Sistem Penjualan Properti | Jombang & Surabaya</title>
+<meta name="description" content="Ahmad Fajar A. membantu developer, owner, dan digital marketer properti menaikkan closing lewat sistem penjualan berbasis data: iklan Meta, pengelolaan leads, dan pembinaan tim agen. Jadwalkan sesi konsultasi.">
+<meta property="og:title" content="Ahmad Fajar A. — Konsultan Sistem Penjualan Properti">
+<meta property="og:description" content="Ubah leads properti jadi closing yang terukur. Pengalaman menaikkan penjualan dari 1–2 menjadi 8–10 unit per bulan.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<noscript><style>.reveal,.line>span{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+/* =========================================================
+   TEMA A — CLEAN APPLE GREEN (animasi terinspirasi aelixa.webflow.io)
+   Ubah warna cukup di variabel berikut.
+   ========================================================= */
+:root{
+  --bg:#FFFFFF;
+  --bg-alt:#F5F5F7;
+  --ink:#1D1D1F;
+  --muted:#6E6E73;
+  --mute-head:#8E8E93;     /* kata abu pada judul dua-warna (teks besar, kontras ≥3:1) */
+  --accent:#0F8A5F;
+  --accent-dark:#0B6E4B;
+  --mint:#D9F2E6;
+  --line:#E5E5EA;
+  --radius:22px;
+  --font-head:"Funnel Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+@media(min-width:900px){section{padding:120px 0}}
+.alt{background:var(--bg-alt)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+
+/* ---------- Tipografi ---------- */
+h1,h2,h3{font-family:var(--font-head);letter-spacing:-.03em;line-height:1.05;margin:0;font-weight:600}
+h1{font-size:clamp(42px,8vw,96px)}
+h2{font-size:clamp(34px,5.4vw,64px)}
+h3{font-size:clamp(20px,2.2vw,24px);letter-spacing:-.02em;line-height:1.2}
+.mute{color:var(--mute-head)}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:600px}
+.sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:48px;max-width:820px}
+.sec-head.center{align-items:center;text-align:center;margin-left:auto;margin-right:auto}
+
+/* Tag pill (gaya Aelixa) */
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.02em;padding:7px 14px 7px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);width:max-content;max-width:100%}
+.alt .tag{background:#fff}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--mint)}
+
+/* ---------- Animasi judul baris-per-baris ---------- */
+.line{display:block;overflow:hidden;padding-bottom:.08em}
+.line > span{display:inline-block;transform:translateY(110%);transition:transform 1s var(--ease)}
+.in .line > span{transform:none}
+.in .line:nth-child(2) > span{transition-delay:.08s}
+.in .line:nth-child(3) > span{transition-delay:.16s}
+.in .line:nth-child(4) > span{transition-delay:.24s}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
+
+/* ---------- Tombol: teks bergulir + ikon bulat (gaya Aelixa) ---------- */
+.btn{--h:52px;display:inline-flex;align-items:center;gap:10px;height:var(--h);padding:0 6px 0 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:var(--font-body);transition:background .3s,transform .3s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn-roll{display:block;height:1.5em;overflow:hidden;line-height:1.5em}
+.btn-roll span{display:block;transition:transform .45s var(--ease)}
+.btn:hover .btn-roll span{transform:translateY(-100%)}
+.btn-ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:transform .45s var(--ease)}
+.btn:hover .btn-ic{transform:rotate(-45deg)}
+.btn-ic svg{width:18px;height:18px}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary .btn-ic{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#000}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);padding-right:6px}
+.btn-ghost .btn-ic{background:var(--bg-alt)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-green{background:var(--accent);color:#fff}
+.btn-green .btn-ic{background:#fff;color:var(--accent)}
+.btn-green:hover{background:var(--accent-dark)}
+.btn-sm{--h:44px;font-size:14px;padding-left:18px}
+.btn-sm .btn-ic{width:32px;height:32px}
+.btn-wide{width:100%;justify-content:space-between}
+.micro{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px}
+.micro span::before{content:"✓ ";color:var(--accent);font-weight:700}
+
+/* ---------- Placeholder & Frame gambar ---------- */
+.ph{position:relative;background:repeating-linear-gradient(45deg,#ECECF0,#ECECF0 10px,#F4F4F6 10px,#F4F4F6 20px);border:1.5px dashed #C7C7CC;border-radius:var(--radius);display:grid;place-items:center;text-align:center;color:#6E6E73;font-size:13px;font-weight:600;padding:12px;overflow:hidden}
+.ph small{display:block;font-weight:400;font-size:12px}
+.img-frame{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.06);border:1px solid var(--line);background:#f0f0f2}
+.img-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.img-frame:hover img{transform:scale(1.03)}
+.r45{aspect-ratio:4/5}.r43{aspect-ratio:4/3}.r34{aspect-ratio:3/4}.r169{aspect-ratio:16/9}
+
+/* ---------- NAVBAR ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s,padding .3s;padding:16px 0}
+.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);box-shadow:0 1px 0 var(--line);padding:10px 0}
+.nav .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:var(--font-head);font-weight:700;font-size:21px;letter-spacing:-.03em;text-decoration:none}
+.logo b{color:var(--accent)}
+.menu{display:none;gap:4px;list-style:none;margin:0;padding:0}
+.menu a{text-decoration:none;font-size:15px;font-weight:500;padding:10px 14px;border-radius:999px;transition:background .25s}
+.menu a:hover{background:var(--bg-alt)}
+.nav-cta{display:none}
+.burger{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);transition:.3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav.open .burger span{background:transparent}
+.nav.open .burger span::before{top:0;transform:rotate(45deg)}
+.nav.open .burger span::after{top:0;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:70px 12px auto 12px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:12px;box-shadow:0 20px 60px rgba(0,0,0,.12);display:flex;flex-direction:column;gap:2px;opacity:0;pointer-events:none;transform:translateY(-10px);transition:.35s var(--ease)}
+.nav.open .mobile-menu{opacity:1;pointer-events:auto;transform:none}
+.mobile-menu a{text-decoration:none;font-size:18px;font-weight:500;padding:14px 16px;border-radius:14px}
+.mobile-menu a:hover{background:var(--bg-alt)}
+.mobile-menu .btn{margin-top:8px}
+@media(min-width:960px){.menu,.nav-cta{display:flex}.burger,.mobile-menu{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{padding:130px 0 70px;position:relative}
+@media(min-width:900px){.hero{padding:170px 0 100px}}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.25fr 1fr;gap:56px}}
+.hero h1{margin:22px 0 26px}
+.h-icon{display:inline-grid;place-items:center;width:.82em;height:.82em;border-radius:50%;background:var(--mint);color:var(--accent);vertical-align:-.08em;margin:0 .08em;animation:spin 10s linear infinite}
+.h-icon svg{width:55%;height:55%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-visual{position:relative;max-width:460px;margin:0 auto;width:100%}
+.float{position:absolute;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 18px 40px rgba(0,0,0,.08);animation:bob 6s ease-in-out infinite}
+.float b{display:block;font-family:var(--font-head);font-size:26px;letter-spacing:-.03em;color:var(--accent);line-height:1}
+.float span{font-size:12px;color:var(--muted)}
+.f1{left:-14px;bottom:18%}
+.f2{right:-10px;top:10%;animation-delay:-3s}
+@media(min-width:1100px){.f1{left:-48px}.f2{right:-36px}}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* ---------- LOGO MARQUEE (1 baris) ---------- */
+.logos{padding:36px 0 44px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.logos p{text-align:center;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 22px;font-weight:600}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-group{display:flex;align-items:center;gap:56px;padding-right:56px}
+.logo-item{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:600;font-size:22px;letter-spacing:-.02em;color:#8E8E93;white-space:nowrap;filter:grayscale(1);transition:color .3s}
+.logo-item:hover{color:var(--ink)}
+.logo-item .lm{width:34px;height:34px;border-radius:10px;background:#E5E5EA;display:grid;place-items:center;font-size:14px;color:#6E6E73}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- STATS ---------- */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:900px){.stats{grid-template-columns:repeat(4,1fr);gap:16px}}
+.stat{background:#fff;border-radius:var(--radius);padding:26px 22px;border:1px solid var(--line)}
+.stat .num{font-family:var(--font-head);font-weight:600;font-size:clamp(40px,5vw,64px);letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.stat .num em{font-style:normal;color:var(--accent)}
+.stat p{margin:12px 0 0;color:var(--muted);font-size:15px}
+
+/* ---------- MASALAH ---------- */
+.pains{display:grid;gap:14px}
+@media(min-width:900px){.pains{grid-template-columns:repeat(3,1fr)}}
+.pain{padding:28px;border-radius:var(--radius);background:var(--bg-alt)}
+.pain .q{font-family:var(--font-head);font-size:22px;letter-spacing:-.02em;line-height:1.25;font-weight:600;margin:14px 0 10px}
+.pain p{margin:0;color:var(--muted)}
+.pain .ic{width:44px;height:44px;border-radius:14px;background:#fff;display:grid;place-items:center;color:var(--accent)}
+
+/* ---------- LAYANAN ---------- */
+.services{display:grid;gap:16px}
+@media(min-width:960px){.services{grid-template-columns:1.15fr 1fr 1fr}}
+.svc{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:16px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.07)}
+.svc.featured{background:var(--ink);color:#fff;border-color:var(--ink)}
+.svc.featured p,.svc.featured li{color:#C7C7CC}
+.svc .badge{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--mint);padding:5px 10px;border-radius:999px;width:max-content}
+.svc .ic{width:52px;height:52px;border-radius:16px;background:var(--bg-alt);display:grid;place-items:center;color:var(--accent)}
+.svc.featured .ic{background:#2C2C2E;color:#5BD6A2}
+.svc p{margin:0;color:var(--muted)}
+.svc ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px}
+.svc li{padding-left:26px;position:relative}
+.svc li::before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%230F8A5F' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.svc .foot{margin-top:auto;padding-top:10px}
+.svc-link{font-weight:600;text-decoration:none;display:inline-flex;gap:8px;align-items:center;min-height:44px}
+.svc-link:hover{color:var(--accent)}
+
+/* ---------- CARA KERJA ---------- */
+.steps{display:grid;gap:14px;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:#fff;border-radius:var(--radius);padding:28px;position:relative;border:1px solid var(--line)}
+.step .n{font-family:var(--font-head);font-size:15px;font-weight:600;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--accent);margin-bottom:22px}
+.step p{color:var(--muted);margin:8px 0 0;font-size:15px}
+.step .time{display:inline-block;margin-top:16px;font-size:12px;font-weight:600;color:var(--ink);background:var(--bg-alt);padding:4px 10px;border-radius:999px}
+
+/* ---------- GALERI CLOSING ---------- */
+.gallery-wrap{display:grid;gap:32px}
+@media(min-width:960px){.gallery-wrap{grid-template-columns:.9fr 2fr;align-items:start}.gallery-side{position:sticky;top:110px}}
+.gallery{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+.gallery figure{margin:0;flex:0 0 78%;scroll-snap-align:start}
+.gallery figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+@media(min-width:700px){.gallery{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible}.gallery figure{flex:auto}.gallery figure:nth-child(3n+2){transform:translateY(32px)}}
+
+/* ---------- TESTIMONI CAROUSEL (otomatis ke samping) ---------- */
+.big-marquee{overflow:hidden;margin-bottom:48px}
+.big-marquee .marquee-track{animation-duration:26s}
+.big-marquee .marquee-group{gap:32px;padding-right:32px}
+.big-marquee span{font-family:var(--font-head);font-size:clamp(40px,7vw,88px);font-weight:600;letter-spacing:-.04em;white-space:nowrap;line-height:1.1}
+.big-marquee span.o{color:transparent;-webkit-text-stroke:1.5px var(--mute-head)}
+.t-carousel{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.t-track{display:flex;width:max-content;animation:scroll 55s linear infinite}
+.t-carousel:hover .t-track,.t-carousel:focus-within .t-track{animation-play-state:paused}
+.t-group{display:flex;gap:16px;padding-right:16px}
+.t-card{width:min(84vw,390px);background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:20px;flex-shrink:0}
+.t-stars{color:var(--accent);letter-spacing:2px;font-size:15px}
+.t-card blockquote{margin:0;font-size:17px;line-height:1.55;color:var(--ink)}
+.t-person{display:flex;gap:12px;align-items:center;margin-top:auto}
+.t-av{width:48px;height:48px;border-radius:50%;background:var(--mint);color:var(--accent);display:grid;place-items:center;font-weight:700;font-family:var(--font-head);flex-shrink:0}
+.t-person b{display:block;font-size:15px}
+.t-person span{font-size:13px;color:var(--muted)}
+.t-hint{text-align:center;font-size:13px;color:var(--muted);margin-top:18px}
+
+/* ---------- PERJALANAN ---------- */
+.about-grid{display:grid;gap:40px}
+@media(min-width:960px){.about-grid{grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}.about-photo{position:sticky;top:110px}}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 36px 46px}
+.timeline li::before{content:"";position:absolute;left:3px;top:6px;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--accent)}
+.timeline li.now::before{background:var(--accent);box-shadow:0 0 0 6px var(--mint)}
+.timeline .when{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.02em}
+.timeline h3{margin:4px 0 8px}
+.timeline p{margin:0;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tools span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--bg-alt)}
+
+/* ---------- MENGAJAR ---------- */
+.speak{display:grid;gap:32px;align-items:center}
+@media(min-width:960px){.speak{grid-template-columns:1fr 1fr;gap:64px}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.chips span{font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.speak-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.speak-photos .ph:first-child{grid-row:span 2;aspect-ratio:3/4}
+.text-link{font-weight:600;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.text-link:hover{text-decoration:underline}
+
+/* ---------- FAQ ---------- */
+.faq-grid{display:grid;gap:40px}
+@media(min-width:960px){.faq-grid{grid-template-columns:.8fr 1.2fr;gap:72px}}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;gap:20px;font-family:var(--font-head);font-size:clamp(18px,2vw,21px);font-weight:600;letter-spacing:-.02em;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--bg-alt);display:grid;place-items:center;transition:transform .4s var(--ease),background .3s}
+.faq details[open] summary .pm{transform:rotate(45deg);background:var(--mint);color:var(--accent)}
+.faq details p{margin:0 0 24px;color:var(--muted);max-width:640px}
+
+/* ---------- KONTAK ---------- */
+.contact-card{background:var(--ink);color:#fff;border-radius:36px;padding:36px 22px;display:grid;gap:40px;overflow:hidden;position:relative}
+@media(min-width:960px){.contact-card{grid-template-columns:1fr 1fr;padding:64px;gap:64px}}
+.contact-card h2 .mute{color:#8E8E93}
+.contact-card .lead{color:#C7C7CC}
+.contact-card .tag{background:#2C2C2E;border-color:#3A3A3C;color:#fff}
+.contact-card .tag i{box-shadow:0 0 0 4px rgba(15,138,95,.35)}
+.c-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px}
+.c-list a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-weight:500;min-height:44px}
+.c-list a:hover{color:#5BD6A2}
+.c-list .ci{width:40px;height:40px;border-radius:12px;background:#2C2C2E;display:grid;place-items:center;flex-shrink:0}
+form{background:#fff;color:var(--ink);border-radius:26px;padding:24px;display:grid;gap:14px}
+@media(min-width:600px){form{padding:30px}}
+.f-row{display:grid;gap:14px}
+@media(min-width:600px){.f-row{grid-template-columns:1fr 1fr}}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;padding:13px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg-alt);color:var(--ink);width:100%;min-height:48px;transition:border-color .2s,background .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+textarea{min-height:110px;resize:vertical}
+.f-note{font-size:13px;color:var(--muted);margin:0;text-align:center}
+
+/* ---------- FOOTER ---------- */
+footer{padding:80px 0 32px;overflow:hidden}
+.foot-top{display:grid;gap:32px;margin-bottom:56px}
+@media(min-width:900px){.foot-top{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-top h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.foot-top ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+.foot-top a{text-decoration:none;display:inline-block;padding:6px 0}
+.foot-top a:hover{color:var(--accent)}
+.foot-big{font-family:var(--font-head);font-weight:600;font-size:clamp(48px,12vw,180px);letter-spacing:-.05em;line-height:.9;margin:0;color:var(--ink)}
+.foot-big .mute{color:#D1D1D6}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+
+/* WhatsApp mengambang (mobile) */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(15,138,95,.4);transform:scale(0);transition:transform .4s var(--ease)}
+.wa-float.show{transform:scale(1)}
+.wa-float svg{width:28px;height:28px}
+
+/* Hormati preferensi kurangi gerakan */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .line > span,.reveal{transform:none!important;opacity:1!important}
+  .marquee,.t-carousel{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Lewati ke konten</a>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#top" class="logo" aria-label="Ahmad Fajar A. — ke atas">Ahmad Fajar<b>.</b></a>
+    <nav aria-label="Menu utama">
+      <ul class="menu">
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#cara-kerja">Cara Kerja</a></li>
+        <li><a href="#bukti">Bukti</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta js-wa" href="#kontak">
+      <span class="btn-roll"><span>Konsultasi</span><span>Konsultasi</span></span>
+      <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#layanan">Layanan</a>
+      <a href="#cara-kerja">Cara Kerja</a>
+      <a href="#bukti">Bukti</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+      <a class="btn btn-primary btn-wide js-wa" href="#kontak">
+        <span class="btn-roll"><span>Jadwalkan Sesi Konsultasi</span><span>Jadwalkan Sesi Konsultasi</span></span>
+        <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== 1. HERO ===================== -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag reveal"><i></i>Konsultan Penjualan Properti · Jombang &amp; Surabaya</span>
+      <h1 class="split">
+        <span class="line"><span>Ubah Leads</span></span>
+        <span class="line"><span>Properti <span class="h-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span> Jadi</span></span>
+        <span class="line"><span class="mute">Closing yang</span></span>
+        <span class="line"><span class="mute">Terukur.</span></span>
+      </h1>
+      <p class="lead reveal d1">Saya <strong style="color:var(--ink)">Ahmad Fajar A.</strong> — membantu developer, owner, dan digital marketer properti memasang <strong style="color:var(--ink)">sistem penjualan berbasis data</strong>: iklan Meta, pengelolaan leads, dan pembinaan tim agen.</p>
+      <div class="hero-actions reveal d2">
+        <a class="btn btn-primary js-wa" href="#kontak">
+          <span class="btn-roll"><span>Jadwalkan Sesi Konsultasi</span><span>Jadwalkan Sesi Konsultasi</span></span>
+          <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="btn btn-ghost" href="#bukti">
+          <span class="btn-roll"><span>Lihat Bukti Closing</span><span>Lihat Bukti Closing</span></span>
+          <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+        </a>
+      </div>
+      <!-- KARANGAN: format sesi (60 menit, gratis) — sesuaikan dengan kebijakan asli -->
+      <div class="micro reveal d3"><span>Sesi pertama 60 menit, gratis</span><span>Online / tatap muka</span><span>Dibalas &lt; 1×24 jam</span></div>
+    </div>
+
+    <div class="hero-visual reveal d2">
+      <div class="img-frame r45">
+        <img src="images/hero-fajar.jpg" alt="Ahmad Fajar A. - Konsultan Sistem Penjualan Properti" loading="eager" width="600" height="750">
+      </div>
+      <div class="float f1"><b>8 unit</b><span>closing dalam 1 bulan<br>dari iklan Facebook</span></div>
+      <div class="float f2"><b>1–2 → 8–10</b><span>unit terjual per bulan</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. LOGO KLIEN / MITRA (marquee 1 baris) ===================== -->
+<!-- CATATAN: Pesantren Properti, Asbaland Property, Kamidi.online, Dropshipaja.com, STIFIn Institute berasal dari brief.
+     "Mitra 06–08" adalah KARANGAN/placeholder. Ganti teks dengan <img> logo asli (SVG/PNG, tinggi ±32px) setelah ada izin. -->
+<div class="logos" aria-label="Klien dan mitra">
+  <div class="container"><p>Pengalaman bersama brand &amp; mitra</p></div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span class="logo-item"><span class="lm">PP</span>Pesantren Properti</span>
+        <span class="logo-item"><span class="lm">AP</span>Asbaland Property</span>
+        <span class="logo-item"><span class="lm">K</span>Kamidi.online</span>
+        <span class="logo-item"><span class="lm">D</span>Dropshipaja.com</span>
+        <span class="logo-item"><span class="lm">S</span>STIFIn Institute</span>
+        <span class="logo-item"><span class="lm">06</span>[Logo Mitra 06]</span>
+        <span class="logo-item"><span class="lm">07</span>[Logo Mitra 07]</span>
+        <span class="logo-item"><span class="lm">08</span>[Logo Mitra 08]</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span class="logo-item"><span class="lm">PP</span>Pesantren Properti</span>
+        <span class="logo-item"><span class="lm">AP</span>Asbaland Property</span>
+        <span class="logo-item"><span class="lm">K</span>Kamidi.online</span>
+        <span class="logo-item"><span class="lm">D</span>Dropshipaja.com</span>
+        <span class="logo-item"><span class="lm">S</span>STIFIn Institute</span>
+        <span class="logo-item"><span class="lm">06</span>[Logo Mitra 06]</span>
+        <span class="logo-item"><span class="lm">07</span>[Logo Mitra 07]</span>
+        <span class="logo-item"><span class="lm">08</span>[Logo Mitra 08]</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== 3. ANGKA BUKTI ===================== -->
+<section class="alt" id="hasil" aria-labelledby="h-hasil">
+  <div class="container">
+    <div class="sec-head">
+      <span class="tag reveal"><i></i>Hasil di lapangan</span>
+      <h2 id="h-hasil" class="split"><span class="line"><span>Bukan teori.</span></span><span class="line"><span class="mute">Angka dari lapangan.</span></span></h2>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num">8–10<em>/bln</em></div><p>Unit terjual per bulan — naik dari sebelumnya 1–2 unit</p></div>
+      <div class="stat reveal d1"><div class="num"><span class="count" data-to="8">0</span><em> unit</em></div><p>Closing dalam 1 bulan murni dari iklan Facebook (Meta)</p></div>
+      <div class="stat reveal d2"><div class="num"><span class="count" data-to="60">0</span><em>+</em></div><p>Unit closing organik bersama tim agen binaan</p></div>
+      <div class="stat reveal d3"><div class="num"><span class="count" data-to="6">0</span><em>+ th</em></div><p>Di penjualan &amp; marketing properti (2020–2026)</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. MASALAH PENGUNJUNG ===================== -->
+<section aria-labelledby="h-masalah">
+  <div class="container">
+    <div class="sec-head">
+      <span class="tag reveal"><i></i>Kenal dengan kondisi ini?</span>
+      <h2 id="h-masalah" class="split"><span class="line"><span>Iklan jalan, leads masuk,</span></span><span class="line"><span class="mute">tapi closing seret?</span></span></h2>
+    </div>
+    <div class="pains">
+      <div class="pain reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><p class="q">Budget iklan habis, chat banyak yang cuma tanya-tanya.</p><p>Leads tidak tersaring, tim kelelahan melayani yang tidak serius.</p></div>
+      <div class="pain reveal d1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1-4 3-4.6"/></svg></div><p class="q">Agen banyak, yang closing itu-itu saja.</p><p>Tidak ada SOP follow-up, skrip, dan target harian yang jelas.</p></div>
+      <div class="pain reveal d2"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><p class="q">Tidak tahu bocornya di mana.</p><p>Tanpa angka harian, keputusan penjualan hanya berdasarkan perasaan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. LAYANAN ===================== -->
+<section class="alt" id="layanan" aria-labelledby="h-layanan">
+  <div class="container">
+    <div class="sec-head">
+      <span class="tag reveal"><i></i>Layanan</span>
+      <h2 id="h-layanan" class="split"><span class="line"><span>Tiga cara saya membantu</span></span><span class="line"><span class="mute">penjualan properti Anda.</span></span></h2>
+    </div>
+    <div class="services">
+      <article class="svc featured reveal">
+        <span class="badge">Layanan utama</span>
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Pendampingan &amp; Instalasi Sistem Penjualan</h3>
+        <p>Untuk developer dan owner yang ingin penjualan tidak lagi bergantung pada keberuntungan. Berbasis data &amp; angka, untuk private maupun tim.</p>
+        <!-- KARANGAN: rincian cakupan — sesuaikan -->
+        <ul>
+          <li>Bedah alur leads → survei → closing</li>
+          <li>SOP follow-up &amp; skrip closing untuk agen</li>
+          <li>Dashboard angka harian yang mudah dibaca</li>
+          <li>Pembinaan &amp; evaluasi tim agen berkala</li>
+        </ul>
+        <div class="foot">
+          <a class="btn btn-green btn-sm js-wa" href="#kontak">
+            <span class="btn-roll"><span>Konsultasikan Kebutuhan</span><span>Konsultasikan Kebutuhan</span></span>
+            <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </article>
+      <article class="svc reveal d1">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M7 9h6M7 13h10"/></svg></div>
+        <h3>Desain &amp; Iklan Properti</h3>
+        <p>Materi promosi dan iklan Meta yang dibuat oleh orang yang paham cara menjual rumah.</p>
+        <ul>
+          <li>Desain konten &amp; brosur digital</li>
+          <li>Setup &amp; optimasi Meta Ads</li>
+          <li>Landing page proyek (Elementor)</li>
+        </ul>
+        <div class="foot"><a class="svc-link js-wa" href="#kontak">Tanya layanan ini →</a></div>
+      </article>
+      <article class="svc reveal d2">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+        <h3>Pelatihan &amp; Pembicara</h3>
+        <p>Materi bisnis properti yang praktis untuk tim, komunitas, dan webinar.</p>
+        <ul>
+          <li>Selling &amp; closing properti</li>
+          <li>Advertising, desain &amp; editing konten</li>
+          <li>Pemanfaatan AI untuk marketing properti</li>
+        </ul>
+        <div class="foot"><a class="svc-link" href="#mengajar">Lihat topik →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. CARA KERJA ===================== -->
+<section id="cara-kerja" aria-labelledby="h-cara">
+  <div class="container">
+    <div class="sec-head">
+      <span class="tag reveal"><i></i>Cara kerja</span>
+      <h2 id="h-cara" class="split"><span class="line"><span>Dari obrolan pertama</span></span><span class="line"><span class="mute">sampai sistem berjalan.</span></span></h2>
+    </div>
+    <!-- KARANGAN: alur & durasi — sesuaikan dengan cara kerja asli -->
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Ceritakan kondisi</h3><p>Chat WhatsApp atau isi form. Ceritakan proyek, tim, dan angka penjualan saat ini.</p><span class="time">5 menit</span></div>
+      <div class="step reveal d1"><div class="n">02</div><h3>Sesi bedah penjualan</h3><p>Kita bedah iklan, leads, follow-up, dan closing untuk menemukan titik bocor terbesar.</p><span class="time">60 menit · gratis</span></div>
+      <div class="step reveal d2"><div class="n">03</div><h3>Rencana &amp; instalasi</h3><p>Saya susun prioritas perbaikan, SOP, skrip, dan dashboard angka yang dipakai tim.</p><span class="time">2–4 minggu</span></div>
+      <div class="step reveal d3"><div class="n">04</div><h3>Pendampingan</h3><p>Evaluasi angka mingguan dan pembinaan agen sampai sistem berjalan mandiri.</p><span class="time">Berkala</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. GALERI CLOSING ===================== -->
+<section class="alt" id="bukti" aria-labelledby="h-bukti">
+  <div class="container gallery-wrap">
+    <div class="gallery-side">
+      <div class="sec-head" style="margin-bottom:24px">
+        <span class="tag reveal"><i></i>Bukti closing</span>
+        <h2 id="h-bukti" class="split"><span class="line"><span>Yang paling seru?</span></span><span class="line"><span class="mute">Closing.</span></span></h2>
+        <p class="lead reveal">Dokumentasi serah terima bersama konsumen. Closing rumah pertama saya terjadi di usia 19 tahun — 8 unit dalam sebulan dari Facebook.</p>
+      </div>
+      <a class="btn btn-primary reveal js-wa" href="#kontak">
+        <span class="btn-roll"><span>Jadwalkan Sesi Konsultasi</span><span>Jadwalkan Sesi Konsultasi</span></span>
+        <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+    <div class="gallery" tabindex="0" aria-label="Galeri foto closing, geser untuk melihat">
+      <figure class="reveal"><div class="img-frame r43"><img src="images/closing-1.jpg" alt="Dokumentasi serah terima kunci rumah baru" loading="lazy"></div><figcaption>Serah terima unit rumah baru</figcaption></figure>
+      <figure class="reveal d1"><div class="img-frame r43"><img src="images/closing-2.jpg" alt="Konsumen serah terima berkas akad" loading="lazy"></div><figcaption>Akad &amp; dokumen konsumen</figcaption></figure>
+      <figure class="reveal d2"><div class="img-frame r43"><img src="images/closing-3.jpg" alt="Closing bersama pembeli di proyek" loading="lazy"></div><figcaption>Closing di lokasi proyek</figcaption></figure>
+      <figure class="reveal"><div class="img-frame r43"><img src="images/closing-4.jpg" alt="Penyerahan berkas sertifikat dan kunci" loading="lazy"></div><figcaption>Penyerahan berkas &amp; kunci</figcaption></figure>
+      <figure class="reveal d1"><div class="img-frame r43"><img src="images/closing-5.jpg" alt="Closing rumah di usia 19 tahun" loading="lazy"></div><figcaption>Closing 8 unit / bulan pertama</figcaption></figure>
+      <figure class="reveal d2"><div class="img-frame r43"><img src="images/closing-6.jpg" alt="Pembinaan agen closing 60 unit organik" loading="lazy"></div><figcaption>Membina agen &amp; closing 60 unit</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. TESTIMONI (carousel otomatis) ===================== -->
+<!-- PERINGATAN: SEMUA testimoni di bawah adalah KARANGAN/contoh. Ganti dengan testimoni asli
+     (nama, jabatan, perusahaan) dan izin tertulis SEBELUM website dipublikasikan. -->
+<section id="testimoni" aria-labelledby="h-testi" style="padding-bottom:100px">
+  <h2 id="h-testi" style="position:absolute;left:-9999px">Testimoni</h2>
+  <div class="big-marquee marquee" aria-hidden="true" style="-webkit-mask-image:none;mask-image:none">
+    <div class="marquee-track">
+      <div class="marquee-group"><span>Kata mereka</span><span class="o">yang pernah bekerja sama —</span><span>Kata mereka</span><span class="o">yang pernah bekerja sama —</span></div>
+      <div class="marquee-group"><span>Kata mereka</span><span class="o">yang pernah bekerja sama —</span><span>Kata mereka</span><span class="o">yang pernah bekerja sama —</span></div>
+    </div>
+  </div>
+  <div class="t-carousel" role="region" aria-label="Testimoni klien, berjalan otomatis. Arahkan kursor untuk menjeda.">
+    <div class="t-track">
+      <div class="t-group">
+        <figure class="t-card"><div class="t-stars" aria-label="5 dari 5">★★★★★</div><blockquote>"Sebelumnya tim kami hanya closing 1–2 unit sebulan. Setelah SOP follow-up dan dashboard harian dipasang, kami tahu persis di mana leads hilang."</blockquote><figcaption class="t-person"><span class="t-av">HS</span><span><b>[Nama Klien 1]</b><span>Owner Developer Perumahan, Jombang</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars" aria-label="5 dari 5">★★★★★</div><blockquote>"Iklan Meta kami jadi jauh lebih hemat. Chat yang masuk lebih serius, bukan sekadar tanya harga lalu menghilang."</blockquote><figcaption class="t-person"><span class="t-av">RA</span><span><b>[Nama Klien 2]</b><span>Digital Marketer Properti, Surabaya</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars" aria-label="5 dari 5">★★★★★</div><blockquote>"Mas Fajar bukan cuma kasih teori. Beliau turun langsung membina agen kami sampai berani closing sendiri."</blockquote><figcaption class="t-person"><span class="t-av">AN</span><span><b>[Nama Klien 3]</b><span>Direktur Pemasaran, Developer Perumahan</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars" aria-label="5 dari 5">★★★★★</div><blockquote>"Materi webinarnya praktis: dari desain konten, iklan, sampai skrip closing. Langsung bisa dipraktikkan besoknya."</blockquote><figcaption class="t-person"><span class="t-av">DM</span><span><b>[Nama Peserta 4]</b><span>Agen Properti Independen</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars" aria-label="5 dari 5">★★★★★</div><blockquote>"Desain brosur dan landing page proyek kami terlihat jauh lebih profesional. Leads naik sejak bulan pertama."</blockquote><figcaption class="t-person"><span class="t-av">FK</span><span><b>[Nama Klien 5]</b><span>Pemilik Kavling Syariah, Jawa Timur</span></span></figcaption></figure>
+      </div>
+      <div class="t-group" aria-hidden="true">
+        <figure class="t-card"><div class="t-stars">★★★★★</div><blockquote>"Sebelumnya tim kami hanya closing 1–2 unit sebulan. Setelah SOP follow-up dan dashboard harian dipasang, kami tahu persis di mana leads hilang."</blockquote><figcaption class="t-person"><span class="t-av">HS</span><span><b>[Nama Klien 1]</b><span>Owner Developer Perumahan, Jombang</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars">★★★★★</div><blockquote>"Iklan Meta kami jadi jauh lebih hemat. Chat yang masuk lebih serius, bukan sekadar tanya harga lalu menghilang."</blockquote><figcaption class="t-person"><span class="t-av">RA</span><span><b>[Nama Klien 2]</b><span>Digital Marketer Properti, Surabaya</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars">★★★★★</div><blockquote>"Mas Fajar bukan cuma kasih teori. Beliau turun langsung membina agen kami sampai berani closing sendiri."</blockquote><figcaption class="t-person"><span class="t-av">AN</span><span><b>[Nama Klien 3]</b><span>Direktur Pemasaran, Developer Perumahan</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars">★★★★★</div><blockquote>"Materi webinarnya praktis: dari desain konten, iklan, sampai skrip closing. Langsung bisa dipraktikkan besoknya."</blockquote><figcaption class="t-person"><span class="t-av">DM</span><span><b>[Nama Peserta 4]</b><span>Agen Properti Independen</span></span></figcaption></figure>
+        <figure class="t-card"><div class="t-stars">★★★★★</div><blockquote>"Desain brosur dan landing page proyek kami terlihat jauh lebih profesional. Leads naik sejak bulan pertama."</blockquote><figcaption class="t-person"><span class="t-av">FK</span><span><b>[Nama Klien 5]</b><span>Pemilik Kavling Syariah, Jawa Timur</span></span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <p class="t-hint">Arahkan kursor / sentuh untuk menjeda</p>
+</section>
+
+<!-- ===================== 9. PERJALANAN / TENTANG ===================== -->
+<section class="alt" id="tentang" aria-labelledby="h-tentang">
+  <div class="container about-grid">
+    <div class="about-photo reveal">
+      <div class="img-frame r45">
+        <img src="images/about-mentoring.jpg" alt="Ahmad Fajar saat membina dan mentoring sistem penjualan properti" loading="lazy">
+      </div>
+      <div class="tools" aria-label="Tools yang dikuasai">
+        <span>Meta Ads</span><span>Photoshop</span><span>Affinity Designer</span><span>Figma</span><span>Canva</span><span>CapCut</span><span>Elementor</span>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:40px">
+        <span class="tag reveal"><i></i>Perjalanan</span>
+        <h2 id="h-tentang" class="split"><span class="line"><span>Belajar menjual</span></span><span class="line"><span class="mute">dari bawah, sejak 2018.</span></span></h2>
+        <p class="lead reveal">Saya tidak memulai dari ruang kelas, tapi dari berjualan langsung. Setiap sistem yang saya pasang untuk klien sudah saya uji sendiri di lapangan.</p>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span class="when">Nov 2018 – Nov 2019</span><h3>Online Dropshipper</h3><p>Meraih title <strong>"Pedagang Besar"</strong> di platform Dropshipaja.com setelah omzet akumulasi lebih dari Rp100 juta.</p></li>
+        <li class="reveal"><span class="when">Nov 2019 – Jan 2020</span><h3>Asbaland Property</h3><p>Masuk ke dunia properti. Closing rumah pertama di usia 19 tahun — <strong>8 unit dalam 1 bulan</strong> dari iklan Facebook.</p></li>
+        <li class="reveal"><span class="when">Jan 2020 – Feb 2026</span><h3>Pesantren Properti — Marketing &amp; Sales Manager</h3><p>Membina agen dan menaikkan penjualan dari <strong>1–2 menjadi 8–10 unit per bulan</strong>, dengan <strong>60 unit closing organik</strong>.</p></li>
+        <li class="reveal now"><span class="when">Feb 2026 – Sekarang</span><h3>Kamidi.online &amp; Konsultan Independen</h3><p>Fokus memberi dampak: pendampingan sistem penjualan, desain &amp; advertising untuk industri properti dan edukasi, serta mengajar bisnis properti.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10. MENGAJAR & BERBICARA ===================== -->
+<section id="mengajar" aria-labelledby="h-ajar">
+  <div class="container speak">
+    <div>
+      <span class="tag reveal"><i></i>Mengajar &amp; berbicara</span>
+      <h2 id="h-ajar" class="split" style="margin-top:18px"><span class="line"><span>Berbagi praktik</span></span><span class="line"><span class="mute">di kelas &amp; komunitas.</span></span></h2>
+      <!-- KARANGAN: jumlah sesi & peserta — ganti dengan angka asli -->
+      <p class="lead reveal" style="margin-top:18px">Mengisi materi bisnis properti lewat webinar, kelas komunitas, dan pelatihan internal tim — [ISI: 20+ sesi, 500+ peserta].</p>
+      <div class="chips reveal"><span>Selling properti</span><span>Advertising Meta</span><span>Desain konten</span><span>Editing video</span><span>AI untuk marketing</span><span>Membina agen</span></div>
+      <a class="text-link reveal" href="#kontak" data-wa-text="Halo Mas Fajar, saya ingin mengundang Anda sebagai pembicara.">Undang sebagai pembicara →</a>
+    </div>
+    <div class="speak-photos reveal d1">
+      <div class="img-frame" style="grid-row:span 2"><img src="images/teaching-class.jpg" alt="Ahmad Fajar saat mengajar materi bisnis properti" loading="lazy" style="height:100%;object-fit:cover"></div>
+      <div class="img-frame r43"><img src="images/webinar-zoom.jpg" alt="Dokumentasi webinar online bisnis properti" loading="lazy"></div>
+      <div class="img-frame r43"><img src="images/community-sharing.jpg" alt="Ahmad Fajar di sesi sharing komunitas" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 11. FAQ ===================== -->
+<section class="alt" id="faq" aria-labelledby="h-faq">
+  <div class="container faq-grid">
+    <div class="sec-head">
+      <span class="tag reveal"><i></i>FAQ</span>
+      <h2 id="h-faq" class="split"><span class="line"><span>Sebelum</span></span><span class="line"><span class="mute">konsultasi.</span></span></h2>
+      <p class="lead reveal">Belum yakin cocok? Ceritakan kebutuhan Anda — tidak ada kewajiban lanjut.</p>
+    </div>
+    <!-- KARANGAN: jawaban FAQ — sesuaikan dengan kebijakan asli -->
+    <div class="faq">
+      <details class="reveal"><summary>Apakah sesi konsultasi pertama berbayar?<span class="pm" aria-hidden="true">+</span></summary><p>Sesi bedah penjualan pertama selama 60 menit gratis. Jika setelah itu Anda ingin pendampingan, saya kirimkan proposal sesuai skala proyek dan tim.</p></details>
+      <details class="reveal"><summary>Bisa online atau harus tatap muka?<span class="pm" aria-hidden="true">+</span></summary><p>Keduanya bisa. Online via Zoom/Google Meet untuk seluruh Indonesia; tatap muka untuk area Jombang, Surabaya, dan sekitarnya.</p></details>
+      <details class="reveal"><summary>Jenis properti apa yang bisa dibantu?<span class="pm" aria-hidden="true">+</span></summary><p>Terutama perumahan tapak, kavling, dan properti syariah skala kecil–menengah — jenis proyek yang paling banyak saya tangani langsung.</p></details>
+      <details class="reveal"><summary>Saya belum punya tim agen. Masih relevan?<span class="pm" aria-hidden="true">+</span></summary><p>Relevan. Sistem bisa dimulai dari Anda sendiri (private), lalu dikembangkan saat tim bertambah.</p></details>
+      <details class="reveal"><summary>Apakah ada jaminan jumlah unit terjual?<span class="pm" aria-hidden="true">+</span></summary><p>Tidak ada konsultan jujur yang bisa menjamin angka penjualan, karena dipengaruhi produk, harga, lokasi, dan eksekusi tim. Yang saya jamin: sistem yang jelas, terukur, dan didampingi.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 12. CTA PENUTUP + FORM ===================== -->
+<section id="kontak" aria-labelledby="h-kontak">
+  <div class="container">
+    <div class="contact-card">
+      <div>
+        <span class="tag reveal"><i></i>Jadwalkan sesi konsultasi</span>
+        <h2 id="h-kontak" class="split" style="margin:20px 0"><span class="line"><span>Ceritakan kondisi</span></span><span class="line"><span>penjualan Anda.</span></span><span class="line"><span class="mute">Kita cari jalannya.</span></span></h2>
+        <p class="lead reveal">Belum yakin cocok? Tidak apa-apa. Kirim cerita singkat, saya balas dalam 1×24 jam kerja.</p>
+        <ul class="c-list reveal">
+          <li><a class="js-wa" href="#kontak"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></span>0852-1007-7840 (WhatsApp)</a></li>
+          <li><a href="mailto:afajar12@gmail.com?subject=Konsultasi%20Penjualan%20Properti"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>afajar12@gmail.com</a></li>
+          <li><a href="#kontak" style="pointer-events:none"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Jombang &amp; Surabaya, Jawa Timur</a></li>
+        </ul>
+      </div>
+
+      <form id="form-konsul" class="reveal d1" novalidate>
+        <div class="f-row">
+          <label>Nama<input type="text" name="nama" autocomplete="name" required placeholder="Nama Anda"></label>
+          <label>No. WhatsApp<input type="tel" name="wa" autocomplete="tel" inputmode="tel" required placeholder="08xx-xxxx-xxxx"></label>
+        </div>
+        <div class="f-row">
+          <label>Anda adalah
+            <select name="peran" required>
+              <option value="">Pilih…</option>
+              <option>Developer properti</option>
+              <option>Bisnis owner properti</option>
+              <option>Digital marketer properti</option>
+              <option>Agen / tim sales</option>
+              <option>Lainnya</option>
+            </select>
+          </label>
+          <label>Penjualan saat ini
+            <select name="unit">
+              <option value="">Pilih…</option>
+              <option>Belum ada closing</option>
+              <option>1–2 unit / bulan</option>
+              <option>3–5 unit / bulan</option>
+              <option>Lebih dari 5 unit / bulan</option>
+            </select>
+          </label>
+        </div>
+        <label>Cerita singkat<textarea name="pesan" placeholder="Proyek apa, kendala terbesar apa, dan target Anda…"></textarea></label>
+        <button type="submit" class="btn btn-primary btn-wide">
+          <span class="btn-roll"><span>Kirim via WhatsApp</span><span>Kirim via WhatsApp</span></span>
+          <span class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+        <p class="f-note" id="f-note" role="status">Data Anda hanya dipakai untuk menghubungi Anda kembali.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="logo">Ahmad Fajar<b>.</b></a>
+        <p class="lead" style="font-size:16px;margin-top:12px">Konsultan sistem penjualan properti berbasis data. Kita tumbuh &amp; maju bersama-sama — sukses di dunia, mulia di akhirat.</p>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <ul><li><a href="#layanan">Layanan</a></li><li><a href="#cara-kerja">Cara Kerja</a></li><li><a href="#bukti">Bukti</a></li><li><a href="#tentang">Tentang</a></li><li><a href="#faq">FAQ</a></li></ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li><a class="js-wa" href="#kontak">WhatsApp 0852-1007-7840</a></li>
+          <li><a href="mailto:afajar12@gmail.com">afajar12@gmail.com</a></li>
+          <!-- GANTI: tautan media sosial asli -->
+          <li><a href="#" aria-label="Instagram (tautan belum diisi)">[ISI: Instagram]</a></li>
+          <li><a href="#" aria-label="LinkedIn (tautan belum diisi)">[ISI: LinkedIn]</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-big reveal" aria-hidden="true">Ahmad <span class="mute">Fajar.</span></p>
+    <div class="foot-bottom"><span>© <span id="yr">2026</span> Ahmad Fajar A. Semua hak dilindungi.</span><span>Jombang · Surabaya · Jawa Timur</span></div>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" id="wa-float" href="#kontak" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  /* ===== Konfigurasi kontak ===== */
+  var WA = "6285210077840";
+  var WA_TEXT = "Halo Mas Fajar, saya ingin menjadwalkan sesi konsultasi penjualan properti.";
+  var waUrl = function(t){ return "https://wa.me/" + WA + "?text=" + encodeURIComponent(t || WA_TEXT); };
+
+  // Semua tombol CTA → WhatsApp (tetap berfungsi ke #kontak bila JS mati)
+  document.querySelectorAll(".js-wa, [data-wa-text]").forEach(function(a){
+    a.href = waUrl(a.getAttribute("data-wa-text"));
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  // Navbar: blur saat scroll + tombol WA mengambang
+  var nav = document.getElementById("nav"), fab = document.getElementById("wa-float");
+  var onScroll = function(){
+    var y = window.scrollY;
+    nav.classList.toggle("scrolled", y > 20);
+    fab.classList.toggle("show", y > 600);
+  };
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // Menu mobile
+  var burger = document.getElementById("burger");
+  burger.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open);
+    burger.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+  });
+  document.querySelectorAll("#mobile-menu a").forEach(function(a){
+    a.addEventListener("click", function(){ nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); });
+  });
+
+  // Animasi muncul saat scroll + penghitung angka
+  var countUp = function(el){
+    var to = +el.dataset.to, start = null, dur = 1400;
+    var step = function(t){
+      if(!start) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+      if(p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  var targets = document.querySelectorAll(".reveal, .split, .count");
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        e.target.classList.add("in");
+        if(e.target.classList.contains("count")) countUp(e.target);
+        io.unobserve(e.target);
+      });
+    }, {threshold:.15, rootMargin:"0px 0px -40px 0px"});
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(function(t){ t.classList.add("in"); if(t.classList.contains("count")) t.textContent = t.dataset.to; });
+  }
+
+  // Jeda carousel testimoni saat disentuh (layar sentuh)
+  var tc = document.querySelector(".t-carousel .t-track");
+  if(tc){
+    tc.addEventListener("touchstart", function(){ tc.style.animationPlayState = "paused"; }, {passive:true});
+    tc.addEventListener("touchend", function(){ tc.style.animationPlayState = ""; });
+  }
+
+  // Form → pesan WhatsApp
+  var form = document.getElementById("form-konsul"), note = document.getElementById("f-note");
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var d = new FormData(form);
+    if(!d.get("nama") || !d.get("wa") || !d.get("peran")){
+      note.textContent = "Mohon isi nama, nomor WhatsApp, dan peran Anda.";
+      note.style.color = "#B3261E"; return;
+    }
+    var msg = "Halo Mas Fajar, saya ingin menjadwalkan sesi konsultasi.\n\n" +
+      "Nama: " + d.get("nama") + "\nWhatsApp: " + d.get("wa") + "\nPeran: " + d.get("peran") +
+      "\nPenjualan saat ini: " + (d.get("unit") || "-") + "\n\nCerita singkat:\n" + (d.get("pesan") || "-");
+    window.open(waUrl(msg), "_blank", "noopener");
+    note.style.color = ""; note.textContent = "Membuka WhatsApp… Terima kasih, saya balas dalam 1×24 jam kerja.";
+  });
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

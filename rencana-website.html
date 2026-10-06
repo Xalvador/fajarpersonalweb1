@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rencana Website — Ahmad Fajar A. (Tahap 1)</title>
+<style>
+  :root{
+    --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea; --bg:#f5f5f7; --card:#fff;
+    --green:#0f8a5f; --mint:#d9f2e6; --amber:#b25e00; --amberbg:#fff3e0;
+    --blue:#0b5cad; --bluebg:#e8f1fb; --red:#b3261e; --redbg:#fdecea;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  header.cover{background:#fff;border-bottom:1px solid var(--line);padding:48px 0 32px}
+  header.cover h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:8px 0 12px;letter-spacing:-.02em}
+  .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);font-weight:700}
+  .muted{color:var(--muted)}
+  nav.toc{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 20px;white-space:nowrap}
+  nav.toc a{font-size:13px;color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:999px;background:var(--bg)}
+  nav.toc a:hover{background:var(--mint)}
+  section.part{padding:40px 0 8px}
+  section.part > .wrap > h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.01em;margin:0 0 6px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:16px;margin:16px 0 6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:14px 0}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:6px;vertical-align:middle;margin-right:4px}
+  .t-fakta{background:var(--bluebg);color:var(--blue)}
+  .t-saran{background:var(--amberbg);color:var(--amber)}
+  .t-ph{background:var(--redbg);color:var(--red)}
+  .t-kuat{background:var(--mint);color:var(--green)}
+  .t-lemah{background:#f1f1f4;color:#555}
+  .t-wajib{background:var(--green);color:#fff}
+  .t-ops{background:#e9e4ff;color:#4b2aa8}
+  .t-tunda{background:#eee;color:#666}
+  .ph{color:var(--red);font-weight:600;background:var(--redbg);padding:0 4px;border-radius:4px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;font-size:14px}
+  ul{padding-left:20px} li{margin:4px 0}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff;margin:14px 0}
+  table{border-collapse:collapse;width:100%;min-width:900px;font-size:14px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#fafafa;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  tr.tunda td{background:#fafafa;color:#777}
+  .quote{border-left:4px solid var(--green);background:#fff;padding:16px 20px;border-radius:0 12px 12px 0;font-size:18px;font-weight:600;line-height:1.45}
+  .stat{display:flex;gap:10px;flex-wrap:wrap}
+  .stat div{flex:1 1 160px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+  .stat b{display:block;font-size:24px;letter-spacing:-.02em;color:var(--green)}
+
+  /* ===== WIREFRAME ===== */
+  .wf{display:grid;grid-template-columns:3fr 1fr;gap:16px;align-items:start}
+  @media(max-width:760px){.wf{grid-template-columns:1fr}.wf .mob{max-width:220px}}
+  .frame{border:2px solid #c7c7cc;border-radius:12px;background:#fff;padding:10px;position:relative}
+  .frame .lbl{position:absolute;top:-10px;left:10px;background:#fff;padding:0 6px;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase}
+  .b{background:#ececf0;border-radius:6px;min-height:14px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#777;text-align:center;padding:4px}
+  .b.img{background:repeating-linear-gradient(45deg,#ececf0,#ececf0 6px,#f6f6f8 6px,#f6f6f8 12px);border:1px dashed #bbb}
+  .b.btn{background:#1d1d1f;color:#fff;border-radius:999px;font-weight:700}
+  .b.btn2{background:#fff;border:1.5px solid #1d1d1f;color:#1d1d1f;border-radius:999px}
+  .b.acc{background:var(--mint);color:var(--green);font-weight:700}
+  .ln{height:6px;background:#dcdce1;border-radius:4px;margin:5px 0}
+  .ln.h{height:12px;background:#9a9aa0}
+  .ln.w60{width:60%}.ln.w80{width:80%}.ln.w40{width:40%}.ln.w30{width:30%}
+  .row{display:flex;gap:6px}.row>*{flex:1}
+  .col{display:flex;flex-direction:column;gap:6px}
+  .wf-note{font-size:14px;margin:8px 0 26px}
+  .wf-title{font-weight:700;margin:22px 0 8px;font-size:15px}
+
+  /* ===== TEMA ===== */
+  .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:900px){.themes{grid-template-columns:1fr}}
+  .theme{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+  .theme.rec{border:2px solid var(--green);box-shadow:0 8px 30px rgba(15,138,95,.12)}
+  .sw{display:flex;gap:6px;flex-wrap:wrap}
+  .sw span{display:flex;flex-direction:column;align-items:center;font-size:10px;font-family:ui-monospace,Consolas,monospace;color:#555}
+  .sw i{display:block;width:42px;height:42px;border-radius:10px;border:1px solid rgba(0,0,0,.08);margin-bottom:3px}
+  .mock{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .mock .mnav{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;font-size:10px}
+  .mock .mbody{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;padding:16px 12px 18px;align-items:center}
+  .mock h5{margin:0 0 6px;font-size:15px;line-height:1.2}
+  .mock p{margin:0 0 8px;font-size:10px;line-height:1.4}
+  .mock .mbtn{display:inline-block;font-size:10px;font-weight:700;padding:6px 10px;border-radius:999px}
+  .mock .mimg{aspect-ratio:4/5;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:9px;text-align:center}
+  .mock .chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+  .mock .chips span{font-size:8px;padding:3px 6px;border-radius:6px}
+  .pc{font-size:14px} .pc b{display:block;margin-top:6px}
+  footer{padding:40px 0;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="eyebrow">Tahap 1 · Laporan Rencana Website</div>
+    <h1>Website Personal Branding<br>Ahmad Fajar A. — Konsultan Penjualan Properti</h1>
+    <p class="muted">Sumber fakta tunggal: 5 slide PNG brief profil. Disusun 6 Oktober 2026. Website belum dibuat — menunggu persetujuan.</p>
+    <div class="legend">
+      <span><span class="tag t-fakta">Fakta</span> diambil langsung dari PNG</span>
+      <span><span class="tag t-saran">Saran</span> asumsi / rekomendasi saya</span>
+      <span><span class="ph">[ISI: ...]</span> placeholder, data belum ada</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#s1">1. Profil</a><a href="#s2">2. Positioning</a><a href="#s3">3. Struktur</a><a href="#s4">4. Wireframe</a><a href="#s5">5. Visual</a><a href="#s6">6. Tema</a><a href="#s7">7. Data kurang</a><a href="#s8">8. Pertanyaan</a><a href="#s9">9. Penilaian</a>
+</div></nav>
+
+<!-- ================= 1 ================= -->
+<section class="part" id="s1"><div class="wrap">
+  <h2>1. Ringkasan profil dari PNG</h2>
+  <div class="grid2">
+    <div class="card">
+      <h4><span class="tag t-fakta">Fakta</span> Identitas</h4>
+      <ul>
+        <li>Nama: <b>Ahmad Fajar A.</b></li>
+        <li>Jabatan tertulis: <b>Marketing &amp; Sales Manager</b></li>
+        <li>Domisili: <b>Jombang &amp; Surabaya, Jawa Timur</b></li>
+        <li>Logo <b>STIFIn Institute</b> muncul di slide 1 &amp; 5 — hubungannya <u>tidak dijelaskan</u>.</li>
+        <li>Tools: Photoshop, Affinity Designer, Figma, Canva, CapCut, Elementor, Meta.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4><span class="tag t-fakta">Fakta</span> Perjalanan karier</h4>
+      <ul>
+        <li>Online Dropshipper — Nov 2018 s/d Nov 2019</li>
+        <li>Asbaland Roperty <span class="muted">(tertulis begitu; kemungkinan salah ketik "Property" — perlu konfirmasi)</span> — Nov 2019 s/d Jan 2020</li>
+        <li>Pesantren Properti — Jan 2020 s/d Feb 2026 <span class="tag t-saran">±6 tahun, dihitung dari tanggal</span></li>
+        <li>Kamidi.online — Feb 2026 s/d sekarang</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4><span class="tag t-fakta">Fakta</span> Keahlian &amp; layanan saat ini ("Sekarang fokus memberi dampak")</h4>
+    <ul>
+      <li><b>Freelance design &amp; advertising</b> — industri properti &amp; edukasi.</li>
+      <li><b>Pendampingan &amp; instalasi sistem penjualan</b> — berbasis data &amp; angka, untuk private / tim.</li>
+      <li><b>Mengajar materi bisnis properti</b> — design, editing, advertising, selling, properti, AI; via webinar, komunitas, dll.</li>
+    </ul>
+  </div>
+
+  <h3>Bukti yang tersedia</h3>
+  <div class="tbl-wrap"><table style="min-width:700px">
+    <tr><th>Bukti (fakta dari PNG)</th><th>Kekuatan</th><th>Catatan</th></tr>
+    <tr><td>Penjualan properti naik dari <b>1–2 unit jadi 8–10 unit/bulan</b> sambil membina agen</td><td><span class="tag t-kuat">Kuat</span></td><td>Paling relevan untuk developer. Belum jelas periode, proyek, dan perannya di mana (asumsi: Pesantren Properti).</td></tr>
+    <tr><td><b>Closing 8 unit dalam 1 bulan</b> dari Facebook (kini Meta), di usia 19 tahun</td><td><span class="tag t-kuat">Kuat</span></td><td>Bukti langsung keahlian iklan Meta. Bagus untuk digital marketer properti.</td></tr>
+    <tr><td><b>Closing 60 unit organik</b></td><td><span class="tag t-kuat">Kuat</span></td><td>Arti "organik" (tanpa iklan berbayar?) dan rentang waktunya perlu dikonfirmasi.</td></tr>
+    <tr><td>±11 foto serah terima / closing (slide 4)</td><td><span class="tag t-kuat">Kuat (visual)</span></td><td>Bukti nyata, tapi menampilkan wajah konsumen → butuh izin.</td></tr>
+    <tr><td>Foto mengajar di depan kelas &amp; tangkapan layar webinar Zoom</td><td><span class="tag t-lemah">Sedang</span></td><td>Tidak ada jumlah peserta, nama penyelenggara, atau judul acara.</td></tr>
+    <tr><td>Title "Pedagang Besar" dropshipaja.com, omzet akumulasi &gt;Rp100 jt</td><td><span class="tag t-lemah">Lemah untuk target ini</span></td><td>Bukan properti; cukup sebagai cerita awal di timeline.</td></tr>
+    <tr><td>Logo STIFIn Institute</td><td><span class="tag t-lemah">Belum bisa dipakai</span></td><td>Tidak jelas: sertifikasi, mitra, atau sekadar acara. Tidak akan ditampilkan sampai dikonfirmasi.</td></tr>
+    <tr><td>Testimoni, nama klien konsultasi, logo klien, sertifikasi</td><td><span class="tag t-ph">Tidak ada</span></td><td>Celah terbesar untuk peran "konsultan".</td></tr>
+  </table></div>
+</div></section>
+
+<!-- ================= 2 ================= -->
+<section class="part" id="s2"><div class="wrap">
+  <h2>2. Strategi positioning</h2>
+  <p class="muted"><span class="tag t-saran">Saran</span> Disusun dari fakta di PNG; kata-kata final menunggu jawaban pertanyaan klarifikasi.</p>
+  <div class="quote">Ahmad Fajar A. membantu developer dan pemilik bisnis properti <u>menaikkan jumlah closing per bulan</u> dengan memasang <u>sistem penjualan berbasis data</u> — dari iklan Meta, pengelolaan leads, sampai pembinaan tim agen — berdasarkan pengalaman ±6 tahun langsung di lapangan penjualan properti.</div>
+
+  <div class="grid3" style="margin-top:14px">
+    <div class="card">
+      <h4>Peran utama</h4>
+      <p><b>Konsultan sistem penjualan properti</b> (dari layanan "Pendampingan &amp; instalasi sistem penjualan").</p>
+      <h4>Peran pendukung</h4>
+      <ul>
+        <li><b>Speaker / pengajar</b> bisnis properti (webinar, komunitas)</li>
+        <li><b>Jasa</b> design &amp; advertising properti</li>
+      </ul>
+      <p class="muted" style="font-size:14px">Pendukung ditampilkan ringkas agar tidak mengaburkan peran konsultan.</p>
+    </div>
+    <div class="card">
+      <h4>Tujuan &amp; CTA</h4>
+      <ul>
+        <li><b>Tujuan:</b> pengunjung memesan sesi konsultasi.</li>
+        <li><b>CTA utama:</b> "Jadwalkan Sesi Konsultasi" → WhatsApp <span class="ph">[ISI: nomor WA]</span></li>
+        <li><b>CTA pendukung 1:</b> "Lihat bukti closing" (scroll ke galeri)</li>
+        <li><b>CTA pendukung 2:</b> "Undang sebagai pembicara" (tautan teks kecil, bukan tombol besar)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Microcopy penurun hambatan</h4>
+      <ul>
+        <li>"Belum yakin cocok? Ceritakan kondisi penjualan Anda dulu."</li>
+        <li>"Dibalas dalam <span class="ph">[ISI: mis. 1×24 jam kerja]</span>."</li>
+        <li>"Sesi <span class="ph">[ISI: durasi]</span>, <span class="ph">[ISI: gratis/berbayar]</span>, online atau tatap muka di Jombang/Surabaya."</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Profil pengunjung &amp; apa yang mereka cari</h3>
+  <p class="muted"><span class="tag t-saran">Asumsi</span> Berdasarkan target yang Anda sebut; perlu divalidasi.</p>
+  <div class="tbl-wrap"><table style="min-width:700px">
+    <tr><th>Pengunjung</th><th>Masalah yang mungkin dirasakan</th><th>Yang ingin dilihat dalam 5 detik</th><th>Bukti yang paling meyakinkan</th></tr>
+    <tr><td><b>Developer properti</b></td><td>Unit tidak bergerak, tim agen tidak produktif, biaya iklan boros</td><td>Pernah menaikkan penjualan proyek properti, bukan teori</td><td>1–2 → 8–10 unit/bulan; membina agen</td></tr>
+    <tr><td><b>Bisnis owner properti</b> (agen, broker, pemilik kavling)</td><td>Bergantung pada satu-dua orang, tidak ada sistem</td><td>Ada proses yang jelas dan terukur</td><td>Galeri closing; 60 unit organik</td></tr>
+    <tr><td><b>Digital marketer properti</b></td><td>Leads banyak tapi tidak closing; materi iklan lemah</td><td>Paham Meta Ads + desain + closing</td><td>8 unit/bulan dari Facebook; tools desain</td></tr>
+  </table></div>
+</div></section>
+
+<!-- ================= 3 ================= -->
+<section class="part" id="s3"><div class="wrap">
+  <h2>3. Rencana struktur section</h2>
+  <p class="muted">Karena bukti pihak ketiga (testimoni, logo klien) belum ada, struktur dibuat <b>ringkas: 8 section aktif</b>, 3 ditunda.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>#</th><th>Section</th><th>Status</th><th>Tujuan</th><th>Isi dari PNG</th><th>Draf headline</th><th>CTA</th><th>Bukti dibutuhkan</th></tr>
+    <tr><td>0</td><td>Navbar</td><td><span class="tag t-wajib">Wajib</span></td><td>Navigasi + CTA selalu terlihat</td><td>Nama</td><td>Ahmad Fajar A.</td><td>Konsultasi</td><td>—</td></tr>
+    <tr><td>1</td><td>Hero</td><td><span class="tag t-wajib">Wajib</span></td><td>Siapa, bantu siapa, hasilnya apa</td><td>Nama, peran, foto, 3 angka utama</td><td>"Ubah leads properti jadi closing — dengan sistem penjualan berbasis data."</td><td>Jadwalkan Sesi Konsultasi · Lihat bukti closing</td><td>3 angka di bawah tombol</td></tr>
+    <tr><td>2</td><td>Pita angka bukti</td><td><span class="tag t-wajib">Wajib</span></td><td>Bukti langsung setelah klaim hero</td><td>8–10 unit/bln, 8 unit dari FB, 60 unit organik, ±6 th di properti</td><td>"Hasil nyata di lapangan, bukan teori"</td><td>—</td><td>Konfirmasi konteks angka</td></tr>
+    <tr><td>3</td><td>Masalah pengunjung</td><td><span class="tag t-ops">Opsional</span></td><td>Pengunjung merasa "ini saya"</td><td>— (asumsi)</td><td>"Iklan jalan, leads masuk, tapi closing seret?"</td><td>—</td><td>Tidak perlu; boleh dihapus bila ingin lebih ringkas</td></tr>
+    <tr><td>4</td><td>Layanan (3 kartu)</td><td><span class="tag t-wajib">Wajib</span></td><td>Penawaran terbatas, keputusan cepat</td><td>Pendampingan &amp; instalasi sistem penjualan; Design &amp; advertising; Pelatihan/pembicara</td><td>"Tiga cara saya membantu penjualan properti Anda"</td><td>Konsultasikan kebutuhan Anda</td><td><span class="ph">[ISI: format, durasi, harga mulai]</span></td></tr>
+    <tr><td>5</td><td>Cara kerja (4 langkah)</td><td><span class="tag t-wajib">Wajib</span></td><td>Menjelaskan apa yang terjadi setelah klik CTA</td><td>"Berbasis data &amp; angka"</td><td>"Dari obrolan pertama sampai sistem berjalan"</td><td>Mulai dari sesi konsultasi</td><td>Langkah = <span class="tag t-saran">saran</span>, perlu Anda koreksi</td></tr>
+    <tr><td>6</td><td>Galeri closing</td><td><span class="tag t-wajib">Wajib</span></td><td>Bukti visual terkuat</td><td>±11 foto serah terima</td><td>"Yang paling seru? Closing."</td><td>Jadwalkan konsultasi (CTA tengah)</td><td>Izin konsumen di foto</td></tr>
+    <tr><td>7</td><td>Perjalanan (timeline)</td><td><span class="tag t-wajib">Wajib</span></td><td>Kredibilitas &amp; cerita, setelah bukti</td><td>Dropshipper 2018 → Asbaland → Pesantren Properti → Kamidi.online; closing pertama umur 19</td><td>"Belajar menjual dari bawah, sejak 2018"</td><td>—</td><td>Foto profil profesional</td></tr>
+    <tr><td>8</td><td>Mengajar &amp; berbicara</td><td><span class="tag t-ops">Opsional</span></td><td>Menampung peran speaker</td><td>Topik: design, editing, advertising, selling, properti, AI; webinar, komunitas</td><td>"Berbagi praktik penjualan properti di kelas &amp; komunitas"</td><td>Undang sebagai pembicara</td><td><span class="ph">[ISI: jumlah sesi/peserta, nama komunitas]</span></td></tr>
+    <tr><td>9</td><td>FAQ</td><td><span class="tag t-ops">Opsional</span></td><td>Menjawab keraguan sebelum kontak</td><td>Domisili Jombang &amp; Surabaya</td><td>"Pertanyaan yang sering muncul sebelum konsultasi"</td><td>—</td><td>Jawaban dari Anda (biaya, online/offline, jenis properti)</td></tr>
+    <tr><td>10</td><td>CTA penutup + form</td><td><span class="tag t-wajib">Wajib</span></td><td>Konversi</td><td>Domisili; penutup "Kita tumbuh &amp; maju bersama-sama"</td><td>"Ceritakan kondisi penjualan Anda. Kita cari jalannya bersama."</td><td>WhatsApp + form</td><td>Nomor WA, email, waktu respons</td></tr>
+    <tr><td>11</td><td>Footer</td><td><span class="tag t-wajib">Wajib</span></td><td>Kontak &amp; tautan sosial</td><td>Domisili</td><td>—</td><td>—</td><td><span class="ph">[ISI: sosmed]</span></td></tr>
+    <tr class="tunda"><td>—</td><td>Testimoni</td><td><span class="tag t-tunda">Ditunda</span></td><td>Bukti pihak ketiga</td><td>Tidak ada</td><td>"Kata mereka yang sudah bekerja sama"</td><td>—</td><td>Min. 3 testimoni bernama + jabatan + perusahaan. <b>Alasan tunda:</b> tidak ada data; testimoni anonim justru menurunkan kepercayaan.</td></tr>
+    <tr class="tunda"><td>—</td><td>Logo klien / mitra</td><td><span class="tag t-tunda">Ditunda</span></td><td>Social proof</td><td>Hanya nama tempat kerja + logo STIFIn (tidak jelas)</td><td>—</td><td>—</td><td><b>Alasan tunda:</b> belum ada izin &amp; daftar klien. Tempat kerja cukup di timeline.</td></tr>
+    <tr class="tunda"><td>—</td><td>Studi kasus detail</td><td><span class="tag t-tunda">Ditunda</span></td><td>Bukti mendalam untuk developer</td><td>Angka ada, cerita belum</td><td>"Bagaimana penjualan naik dari 1–2 jadi 8–10 unit"</td><td>—</td><td><b>Alasan tunda:</b> butuh data sebelum/sesudah, periode, strategi. Sangat disarankan sebagai tahap 2.</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:14px">Catatan: konten nilai religius (foto umrah, "Sukses di dunia, mulia di akhirat") <b>tidak</b> dijadikan section tersendiri — rencananya hanya sebagai kalimat penutup/footer, menunggu jawaban pertanyaan no. 5.</p>
+  <p class="muted" style="font-size:14px">Menu navbar (5): <b>Layanan · Cara Kerja · Bukti · Tentang · Kontak</b> + tombol CTA.</p>
+</div></section>
+
+<!-- ================= 4 ================= -->
+<section class="part" id="s4"><div class="wrap">
+  <h2>4. Model bentuk (wireframe)</h2>
+  <p class="muted">Kiri: desktop. Kanan: mobile. Kotak arsir = gambar, hitam = tombol utama, hijau muda = aksen/angka.</p>
+
+  <div class="wf-title">0–1 · Navbar + Hero (dua kolom)</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span>
+      <div class="row" style="align-items:center;margin-bottom:12px"><div class="ln h w40" style="flex:0 0 20%"></div><div style="flex:3"></div><div class="row" style="flex:3"><div class="b">Layanan</div><div class="b">Cara Kerja</div><div class="b">Bukti</div><div class="b">Tentang</div><div class="b btn">Konsultasi</div></div></div>
+      <div class="row" style="align-items:center">
+        <div class="col" style="flex:1.3"><div class="ln w30"></div><div class="ln h"></div><div class="ln h w80"></div><div class="ln"></div><div class="ln w80"></div><div class="row" style="margin-top:6px;max-width:70%"><div class="b btn">Jadwalkan Konsultasi</div><div class="b btn2">Lihat bukti</div></div><div class="row" style="margin-top:6px"><div class="b acc">8–10 unit/bln</div><div class="b acc">8 unit via FB</div><div class="b acc">60 unit</div></div></div>
+        <div class="b img" style="flex:1;height:180px">Foto profil 4:5</div>
+      </div>
+    </div>
+    <div class="frame mob"><span class="lbl">Mobile</span>
+      <div class="row" style="margin-bottom:8px"><div class="ln h w60"></div><div class="b" style="flex:0 0 22px">☰</div></div>
+      <div class="b img" style="height:110px">Foto 4:5 (crop)</div>
+      <div class="ln h" style="margin-top:8px"></div><div class="ln h w80"></div><div class="ln"></div>
+      <div class="b btn" style="margin-top:6px">Jadwalkan Konsultasi</div>
+      <div class="col" style="margin-top:6px"><div class="b acc">8–10 unit/bln</div><div class="b acc">8 unit via FB</div></div>
+    </div>
+  </div>
+  <p class="wf-note">Hero dua kolom: teks kiri, foto kanan. Tiga chip angka langsung di bawah CTA agar klaim dan bukti berdekatan. Di mobile, foto di atas lalu teks, CTA lebar penuh.</p>
+
+  <div class="wf-title">2 · Pita angka bukti (4 kolom → 2×2)</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span><div class="row">
+      <div class="col"><div class="b acc" style="height:34px">8–10</div><div class="ln"></div></div>
+      <div class="col"><div class="b acc" style="height:34px">8 unit</div><div class="ln"></div></div>
+      <div class="col"><div class="b acc" style="height:34px">60</div><div class="ln"></div></div>
+      <div class="col"><div class="b acc" style="height:34px">±6 th</div><div class="ln"></div></div></div></div>
+    <div class="frame mob"><span class="lbl">Mobile</span>
+      <div class="row"><div class="b acc" style="height:30px">8–10</div><div class="b acc">8</div></div>
+      <div class="row" style="margin-top:6px"><div class="b acc" style="height:30px">60</div><div class="b acc">±6 th</div></div></div>
+  </div>
+  <p class="wf-note">Angka besar + satu baris keterangan. Tanpa ikon berlebihan, gaya Apple: banyak ruang kosong.</p>
+
+  <div class="wf-title">3–4 · Masalah (opsional) + Layanan (kartu 3 kolom)</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span>
+      <div class="ln h w40" style="margin:0 auto 10px"></div>
+      <div class="row">
+        <div class="col b" style="height:120px;align-items:stretch;padding:10px"><div class="b acc" style="width:26px;height:26px">◎</div><div class="ln h"></div><div class="ln"></div><div class="ln w80"></div><div class="ln w60"></div></div>
+        <div class="col b" style="height:120px;align-items:stretch;padding:10px;border:2px solid #1d1d1f"><div class="b acc" style="width:26px;height:26px">★</div><div class="ln h"></div><div class="ln"></div><div class="ln w80"></div><div class="ln w60"></div></div>
+        <div class="col b" style="height:120px;align-items:stretch;padding:10px"><div class="b acc" style="width:26px;height:26px">◇</div><div class="ln h"></div><div class="ln"></div><div class="ln w80"></div><div class="ln w60"></div></div>
+      </div>
+      <div class="b btn" style="width:30%;margin:10px auto 0">Konsultasikan kebutuhan</div>
+    </div>
+    <div class="frame mob"><span class="lbl">Mobile</span>
+      <div class="col"><div class="b" style="height:44px;border:2px solid #1d1d1f">Sistem Penjualan ★</div><div class="b" style="height:36px">Design &amp; Ads</div><div class="b" style="height:36px">Pelatihan</div></div></div>
+  </div>
+  <p class="wf-note">Tiga kartu; kartu tengah (Pendampingan &amp; Instalasi Sistem Penjualan) diberi bingkai tegas sebagai layanan utama. Mobile: kartu ditumpuk, layanan utama di atas. Section "Masalah" bila dipakai berupa 3 baris pernyataan pendek di atasnya.</p>
+
+  <div class="wf-title">5 · Cara kerja (langkah horizontal → vertikal)</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span><div class="row" style="align-items:center">
+      <div class="col"><div class="b acc" style="width:28px;height:28px;border-radius:50%">1</div><div class="ln"></div><div class="ln w60"></div></div><div class="ln" style="flex:.3"></div>
+      <div class="col"><div class="b acc" style="width:28px;height:28px;border-radius:50%">2</div><div class="ln"></div><div class="ln w60"></div></div><div class="ln" style="flex:.3"></div>
+      <div class="col"><div class="b acc" style="width:28px;height:28px;border-radius:50%">3</div><div class="ln"></div><div class="ln w60"></div></div><div class="ln" style="flex:.3"></div>
+      <div class="col"><div class="b acc" style="width:28px;height:28px;border-radius:50%">4</div><div class="ln"></div><div class="ln w60"></div></div></div></div>
+    <div class="frame mob"><span class="lbl">Mobile</span><div class="col">
+      <div class="row"><div class="b acc" style="flex:0 0 22px;border-radius:50%">1</div><div class="ln"></div></div>
+      <div class="row"><div class="b acc" style="flex:0 0 22px;border-radius:50%">2</div><div class="ln"></div></div>
+      <div class="row"><div class="b acc" style="flex:0 0 22px;border-radius:50%">3</div><div class="ln"></div></div>
+      <div class="row"><div class="b acc" style="flex:0 0 22px;border-radius:50%">4</div><div class="ln"></div></div></div></div>
+  </div>
+  <p class="wf-note"><span class="tag t-saran">Saran isi</span> 1. Ceritakan kondisi → 2. Bedah angka penjualan (leads, iklan, closing) → 3. Rencana &amp; instalasi sistem → 4. Pendampingan tim. Perlu Anda sesuaikan dengan cara kerja nyata.</p>
+
+  <div class="wf-title">6 · Galeri closing (grid masonry + CTA tengah)</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span>
+      <div class="row"><div class="col" style="flex:1.2"><div class="ln h"></div><div class="ln"></div><div class="b btn" style="margin-top:8px">Jadwalkan Konsultasi</div></div>
+      <div style="flex:3;display:grid;grid-template-columns:repeat(4,1fr);gap:5px">
+        <div class="b img" style="height:60px">Foto</div><div class="b img" style="height:60px">Foto</div><div class="b img" style="height:60px">Foto</div><div class="b img" style="height:60px">Foto</div>
+        <div class="b img" style="height:60px">Foto</div><div class="b img" style="height:60px">Foto</div><div class="b img" style="height:60px">Foto</div><div class="b img" style="height:60px">Foto</div></div></div></div>
+    <div class="frame mob"><span class="lbl">Mobile</span>
+      <div class="ln h"></div>
+      <div class="row" style="overflow:hidden"><div class="b img" style="height:70px;flex:0 0 70%">Foto (geser)</div><div class="b img" style="height:70px;flex:0 0 40%">→</div></div>
+      <div class="b btn" style="margin-top:6px">Jadwalkan Konsultasi</div></div>
+  </div>
+  <p class="wf-note">Desktop: grid foto 4 kolom, rasio seragam 4:3 agar foto amatir terlihat rapi. Mobile: slider geser horizontal (CSS scroll-snap, tanpa JavaScript). Ini posisi CTA tengah halaman.</p>
+
+  <div class="wf-title">7 · Perjalanan (timeline vertikal)</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span><div class="row">
+      <div class="b img" style="flex:1;height:150px">Foto aktivitas</div>
+      <div class="col" style="flex:2;border-left:3px solid #cfe9dc;padding-left:10px">
+        <div><div class="ln w30 h"></div><div class="ln w80"></div></div><div><div class="ln w30 h"></div><div class="ln w60"></div></div><div><div class="ln w30 h"></div><div class="ln w80"></div></div><div><div class="ln w30 h"></div><div class="ln w60"></div></div></div></div></div>
+    <div class="frame mob"><span class="lbl">Mobile</span><div class="col" style="border-left:3px solid #cfe9dc;padding-left:8px">
+      <div class="ln w60 h"></div><div class="ln"></div><div class="ln w60 h"></div><div class="ln"></div><div class="ln w60 h"></div><div class="ln"></div></div></div>
+  </div>
+  <p class="wf-note">Timeline 4 titik (2018 → sekarang) dengan satu kalimat pencapaian per titik, mirip slide 1 brief. Foto aktivitas di kiri (desktop) atau dihilangkan (mobile).</p>
+
+  <div class="wf-title">8 · Mengajar &amp; berbicara (opsional, 2 kolom ringkas)</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span><div class="row"><div class="col"><div class="ln h w60"></div><div class="ln"></div><div class="row"><div class="b">Design</div><div class="b">Ads</div><div class="b">Selling</div><div class="b">AI</div></div><div class="ln w40"></div></div><div class="row"><div class="b img" style="height:80px">Foto kelas</div><div class="b img" style="height:80px">Webinar</div></div></div></div>
+    <div class="frame mob"><span class="lbl">Mobile</span><div class="ln h"></div><div class="row"><div class="b">Design</div><div class="b">Ads</div></div><div class="b img" style="height:60px;margin-top:6px">Foto kelas</div></div>
+  </div>
+  <p class="wf-note">Chip topik + 2 foto. Tautan teks "Undang sebagai pembicara →" — bukan tombol utama.</p>
+
+  <div class="wf-title">9–10 · FAQ (akordeon) + CTA penutup dengan form</div>
+  <div class="wf">
+    <div class="frame"><span class="lbl">Desktop</span>
+      <div class="col" style="margin-bottom:10px"><div class="b" style="justify-content:space-between">Pertanyaan 1 <span>+</span></div><div class="b" style="justify-content:space-between">Pertanyaan 2 <span>+</span></div><div class="b" style="justify-content:space-between">Pertanyaan 3 <span>+</span></div></div>
+      <div class="row" style="background:#f4faf7;padding:10px;border-radius:8px"><div class="col"><div class="ln h"></div><div class="ln"></div><div class="b btn" style="margin-top:6px">Chat via WhatsApp</div><div class="ln w60"></div></div><div class="col"><div class="b">Nama</div><div class="b">No. WA</div><div class="b">Jenis bisnis</div><div class="b" style="height:36px">Cerita singkat</div><div class="b btn2">Kirim</div></div></div></div>
+    <div class="frame mob"><span class="lbl">Mobile</span><div class="b">FAQ +</div><div class="b" style="margin-top:4px">FAQ +</div><div class="ln h" style="margin-top:8px"></div><div class="b btn" style="margin-top:4px">WhatsApp</div><div class="b" style="margin-top:4px">Nama</div><div class="b" style="margin-top:4px">No. WA</div><div class="b btn2" style="margin-top:4px">Kirim</div></div>
+  </div>
+  <p class="wf-note">FAQ memakai elemen &lt;details&gt; (tanpa JS). CTA penutup dua jalur: WhatsApp langsung (utama) atau form singkat (mailto) bagi yang ingin menulis dulu. Microcopy waktu respons di bawah tombol.</p>
+</div></section>
+
+<!-- ================= 5 ================= -->
+<section class="part" id="s5"><div class="wrap">
+  <h2>5. Rencana ilustrasi dan visual</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>Section</th><th>Jenis visual</th><th>Aset yang perlu disiapkan</th><th>Status</th><th>Alternatif jika belum ada</th></tr>
+    <tr><td>Hero</td><td>Foto profil + angka</td><td>Foto profesional setengah badan, latar polos/terang, rasio 4:5, min. 1200px</td><td><span class="tag t-wajib">Wajib</span></td><td>Pakai foto slide 1 (jempol, polo hitam) dengan latar dihapus — layak sementara, tapi lanyard &amp; pose terkesan kasual.</td></tr>
+    <tr><td>Pita angka</td><td>Angka besar (tipografi)</td><td>Tidak perlu aset; hanya konfirmasi angka</td><td><span class="tag t-wajib">Wajib</span></td><td>—</td></tr>
+    <tr><td>Layanan</td><td>Ikon garis sederhana (SVG)</td><td>Tidak perlu; dibuat dalam kode</td><td><span class="tag t-ops">—</span></td><td>—</td></tr>
+    <tr><td>Cara kerja</td><td>Nomor langkah + garis</td><td>Tidak perlu</td><td>—</td><td>—</td></tr>
+    <tr><td>Galeri closing</td><td>Foto dokumentasi</td><td>8–12 foto closing asli (resolusi penuh, bukan potongan kolase), izin tertulis/lisan dari konsumen</td><td><span class="tag t-wajib">Wajib</span></td><td>Jika izin sulit: blur wajah konsumen atau pilih foto yang menonjolkan dokumen/kunci, bukan wajah.</td></tr>
+    <tr><td>Perjalanan</td><td>Foto aktivitas</td><td>1 foto saat membina agen / presentasi (ada di slide 3)</td><td><span class="tag t-ops">Opsional</span></td><td>Tanpa foto, timeline saja.</td></tr>
+    <tr><td>Mengajar</td><td>Foto kelas &amp; screenshot webinar</td><td>File asli foto mengajar + screenshot Zoom (sensor nama peserta bila perlu)</td><td><span class="tag t-ops">Opsional</span></td><td>Chip topik saja.</td></tr>
+    <tr><td>Studi kasus (ditunda)</td><td>Grafik sebelum/sesudah</td><td>Data penjualan per bulan</td><td><span class="tag t-tunda">Tahap berikutnya</span></td><td>—</td></tr>
+    <tr><td>Umum</td><td>Logo pribadi / wordmark</td><td>Opsional; bisa wordmark teks nama</td><td><span class="tag t-ops">Opsional</span></td><td>Nama ditulis dengan font judul.</td></tr>
+  </table></div>
+  <p class="muted" style="font-size:14px"><span class="tag t-saran">Saran</span> Video tidak direkomendasikan untuk versi pertama (berat dimuat). Jika nanti ada video perkenalan 60 detik, bisa ditambahkan di hero sebagai tautan.</p>
+</div></section>
+
+<!-- ================= 6 ================= -->
+<section class="part" id="s6"><div class="wrap">
+  <h2>6. Saran model dan tema (3 opsi)</h2>
+  <div class="themes">
+
+    <!-- A -->
+    <div class="theme rec">
+      <div><span class="tag t-wajib">Rekomendasi</span></div>
+      <h3 style="margin:0">A · Clean Apple Green</h3>
+      <p class="muted" style="margin:0">Mood: bersih, tenang, percaya diri, modern.</p>
+      <div class="sw">
+        <span><i style="background:#FFFFFF"></i>#FFFFFF</span>
+        <span><i style="background:#F5F5F7"></i>#F5F5F7</span>
+        <span><i style="background:#1D1D1F"></i>#1D1D1F</span>
+        <span><i style="background:#0F8A5F"></i>#0F8A5F</span>
+        <span><i style="background:#D9F2E6"></i>#D9F2E6</span>
+      </div>
+      <div class="mock" style="background:#fff">
+        <div class="mnav" style="background:#fff;border-bottom:1px solid #eee;color:#1d1d1f"><b>Ahmad Fajar A.</b><span class="mbtn" style="background:#1d1d1f;color:#fff">Konsultasi</span></div>
+        <div class="mbody" style="background:#F5F5F7">
+          <div><h5 style="color:#1d1d1f;font-family:Inter,system-ui,sans-serif;letter-spacing:-.02em">Ubah leads properti jadi closing.</h5><p style="color:#6e6e73">Sistem penjualan berbasis data untuk developer &amp; owner properti.</p><span class="mbtn" style="background:#0F8A5F;color:#fff">Jadwalkan Konsultasi</span>
+          <div class="chips"><span style="background:#D9F2E6;color:#0F8A5F">8–10 unit/bln</span><span style="background:#D9F2E6;color:#0F8A5F">60 unit</span></div></div>
+          <div class="mimg" style="background:#e5e5ea;color:#888">Foto 4:5</div>
+        </div>
+      </div>
+      <div class="pc"><b>Font</b> Judul &amp; isi: <i>Inter</i> (fallback: -apple-system, Segoe UI). Paling dekat dengan SF Pro Apple, sangat terbaca di layar kecil, satu keluarga font = ringan.</div>
+      <div class="pc"><b>Tata letak &amp; ilustrasi</b> Ruang kosong lebar, section bergantian putih/abu sangat muda, kartu sudut membulat besar, ikon garis tipis. Hijau hanya untuk aksen &amp; angka.</div>
+      <div class="pc"><b>Kelebihan</b> Sesuai preferensi "Apple style"; hijau konsisten dengan warna brief Anda; latar netral membuat foto closing yang beragam kualitasnya tetap terlihat rapi.</div>
+      <div class="pc"><b>Kekurangan</b> Bisa terasa "umum" bila tanpa foto profesional yang kuat; minim karakter lokal.</div>
+      <div class="pc"><b>Cocok untuk</b> Konsultan yang ingin terlihat modern dan berbasis data; audiens digital marketer &amp; developer muda.</div>
+    </div>
+
+    <!-- B -->
+    <div class="theme">
+      <h3 style="margin:0">B · Data Navy</h3>
+      <p class="muted" style="margin:0">Mood: korporat, analitis, berwibawa.</p>
+      <div class="sw">
+        <span><i style="background:#0B1F3A"></i>#0B1F3A</span>
+        <span><i style="background:#14325C"></i>#14325C</span>
+        <span><i style="background:#10B981"></i>#10B981</span>
+        <span><i style="background:#F4F6FA"></i>#F4F6FA</span>
+        <span><i style="background:#F5B841"></i>#F5B841</span>
+      </div>
+      <div class="mock" style="background:#0B1F3A">
+        <div class="mnav" style="color:#fff;border-bottom:1px solid #14325C"><b>Ahmad Fajar A.</b><span class="mbtn" style="background:#10B981;color:#0B1F3A">Konsultasi</span></div>
+        <div class="mbody">
+          <div><h5 style="color:#fff;font-family:Manrope,system-ui,sans-serif">Penjualan properti yang terukur, bukan tebakan.</h5><p style="color:#b7c3d6">Sistem iklan, leads &amp; tim agen berbasis angka.</p><span class="mbtn" style="background:#10B981;color:#0B1F3A">Jadwalkan Konsultasi</span>
+          <div class="chips"><span style="background:#14325C;color:#F5B841">8–10 unit/bln</span><span style="background:#14325C;color:#F5B841">60 unit</span></div></div>
+          <div class="mimg" style="background:#14325C;color:#7f93b3">Foto 4:5</div>
+        </div>
+      </div>
+      <div class="pc"><b>Font</b> Judul: <i>Manrope</i> (geometris, tegas, kesan teknologi). Isi: <i>Inter</i> (terbaca).</div>
+      <div class="pc"><b>Tata letak &amp; ilustrasi</b> Hero gelap, kartu statistik bergaya dashboard, garis grafik sederhana sebagai dekorasi SVG.</div>
+      <div class="pc"><b>Kelebihan</b> Menegaskan sisi "berbasis data &amp; angka"; terasa premium untuk developer besar.</div>
+      <div class="pc"><b>Kekurangan</b> Kesan dashboard menuntut lebih banyak data — padahal datanya baru 3–4 angka; foto closing yang cerah kontras kurang serasi dengan latar gelap; menjauh dari "Apple minimalis".</div>
+      <div class="pc"><b>Cocok untuk</b> Konsultan dengan banyak studi kasus &amp; grafik; klien korporat.</div>
+    </div>
+
+    <!-- C -->
+    <div class="theme">
+      <h3 style="margin:0">C · Warm Earth Syar'i</h3>
+      <p class="muted" style="margin:0">Mood: hangat, membumi, amanah.</p>
+      <div class="sw">
+        <span><i style="background:#FAF7F2"></i>#FAF7F2</span>
+        <span><i style="background:#14532D"></i>#14532D</span>
+        <span><i style="background:#C9A46A"></i>#C9A46A</span>
+        <span><i style="background:#2B2B2B"></i>#2B2B2B</span>
+        <span><i style="background:#EDE5D8"></i>#EDE5D8</span>
+      </div>
+      <div class="mock" style="background:#FAF7F2">
+        <div class="mnav" style="color:#2b2b2b;border-bottom:1px solid #EDE5D8"><b style="font-family:Georgia,serif">Ahmad Fajar A.</b><span class="mbtn" style="background:#14532D;color:#fff">Konsultasi</span></div>
+        <div class="mbody">
+          <div><h5 style="color:#14532D;font-family:'DM Serif Display',Georgia,serif;font-weight:400">Tumbuh bersama lewat penjualan yang amanah.</h5><p style="color:#5a5a5a">Pendampingan sistem penjualan properti.</p><span class="mbtn" style="background:#14532D;color:#fff">Jadwalkan Konsultasi</span>
+          <div class="chips"><span style="background:#EDE5D8;color:#14532D">8–10 unit/bln</span><span style="background:#EDE5D8;color:#14532D">60 unit</span></div></div>
+          <div class="mimg" style="background:#EDE5D8;color:#9b8b70">Foto 4:5</div>
+        </div>
+      </div>
+      <div class="pc"><b>Font</b> Judul: <i>DM Serif Display</i> (hangat, berkarakter). Isi: <i>DM Sans</i> (bersih, satu keluarga desain).</div>
+      <div class="pc"><b>Tata letak &amp; ilustrasi</b> Latar krem, sudut lembut, ornamen garis tipis, foto dengan bingkai membulat.</div>
+      <div class="pc"><b>Kelebihan</b> Selaras dengan latar Pesantren Properti dan nilai religius di slide 5; terasa personal dan dapat dipercaya.</div>
+      <div class="pc"><b>Kekurangan</b> Membatasi persepsi ke segmen properti syariah; kurang "Apple"; kurang menonjolkan sisi data/digital.</div>
+      <div class="pc"><b>Cocok untuk</b> Jika target utama ternyata developer properti syariah / berbasis komunitas muslim.</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--green)">
+    <h4>Rekomendasi: Opsi A — Clean Apple Green</h4>
+    <ul>
+      <li><b>Sesuai preferensi Anda</b> (profesional, minimalis, Apple style) tanpa kompromi.</li>
+      <li><b>Hijau sudah dipakai di brief</b> (judul &amp; garis timeline hijau, kotak mint) → kontinuitas identitas.</li>
+      <li><b>Jumlah bukti masih sedikit</b> (3–4 angka). Gaya minimalis membuat sedikit angka terasa "cukup" karena diberi ruang; gaya dashboard (B) justru membuat kekurangan data terlihat.</li>
+      <li><b>Foto di brief beragam kualitas</b> (dokumentasi HP). Latar putih/abu netral paling toleran.</li>
+      <li>Jika jawaban pertanyaan no. 5 menyatakan fokus ke properti syariah, saya sarankan A dengan aksen dari C (krem &amp; serif di judul) — bukan pindah total.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ================= 7 ================= -->
+<section class="part" id="s7"><div class="wrap">
+  <h2>7. Data dan aset yang masih kurang</h2>
+  <div class="tbl-wrap"><table style="min-width:700px">
+    <tr><th>Prioritas</th><th>Placeholder</th><th>Dipakai di</th><th>Dampak bila kosong</th></tr>
+    <tr><td><b>1 — Kritis</b></td><td><span class="ph">[ISI: nomor WhatsApp]</span>, <span class="ph">[ISI: email]</span></td><td>Navbar, hero, CTA, form</td><td>CTA utama tidak berfungsi</td></tr>
+    <tr><td><b>1 — Kritis</b></td><td><span class="ph">[ISI: format sesi konsultasi — durasi, gratis/berbayar, online/offline]</span></td><td>Hero, layanan, FAQ</td><td>Pengunjung ragu mengklik</td></tr>
+    <tr><td><b>1 — Kritis</b></td><td><span class="ph">[ISI: konteks angka 1–2 → 8–10 unit/bulan &amp; 60 unit organik — proyek, periode, peran]</span></td><td>Pita angka</td><td>Klaim terasa kabur / sulit dipercaya</td></tr>
+    <tr><td><b>2 — Tinggi</b></td><td>Foto profil profesional 4:5</td><td>Hero</td><td>Kesan pertama kurang meyakinkan</td></tr>
+    <tr><td><b>2 — Tinggi</b></td><td>Izin + file asli 8–12 foto closing</td><td>Galeri</td><td>Bukti visual terkuat tidak bisa dipakai</td></tr>
+    <tr><td><b>2 — Tinggi</b></td><td><span class="ph">[ISI: waktu respons, mis. 1×24 jam kerja]</span></td><td>CTA, form</td><td>Microcopy penurun hambatan hilang</td></tr>
+    <tr><td><b>2 — Tinggi</b></td><td><span class="ph">[ISI: penjelasan Kamidi.online &amp; peran Anda]</span></td><td>Timeline, hero</td><td>Posisi saat ini tidak jelas</td></tr>
+    <tr><td><b>3 — Sedang</b></td><td><span class="ph">[ISI: cakupan tiap layanan &amp; harga mulai]</span></td><td>Layanan</td><td>Kartu layanan terlalu umum</td></tr>
+    <tr><td><b>3 — Sedang</b></td><td><span class="ph">[ISI: langkah kerja konsultasi yang sebenarnya]</span></td><td>Cara kerja</td><td>Memakai draf saran saya</td></tr>
+    <tr><td><b>3 — Sedang</b></td><td><span class="ph">[ISI: jumlah webinar/kelas, jumlah peserta, nama komunitas]</span></td><td>Mengajar</td><td>Section opsional lemah</td></tr>
+    <tr><td><b>3 — Sedang</b></td><td><span class="ph">[ISI: tautan Instagram / LinkedIn / YouTube]</span></td><td>Footer</td><td>Minor</td></tr>
+    <tr><td><b>4 — Tahap berikutnya</b></td><td>Testimoni bernama (min. 3), logo klien + izin, data studi kasus</td><td>Section ditunda</td><td>Section tetap ditunda</td></tr>
+    <tr><td><b>4 — Tahap berikutnya</b></td><td>Hubungan dengan STIFIn Institute (sertifikat?)</td><td>Kredensial</td><td>Logo tidak ditampilkan</td></tr>
+  </table></div>
+</div></section>
+
+<!-- ================= 8 ================= -->
+<section class="part" id="s8"><div class="wrap">
+  <h2>8. Pertanyaan klarifikasi</h2>
+  <div class="card">
+    <ol>
+      <li><b>Sesi konsultasi seperti apa yang dijual?</b> Durasi, gratis atau berbayar (dan kisaran harga), online/offline, dan apa yang klien dapat setelahnya. Ini menentukan bunyi CTA utama.</li>
+      <li><b>Atas nama siapa layanan ini?</b> Apa itu Kamidi.online dan peran Anda di sana — apakah konsultasi dijual sebagai pribadi atau lewat Kamidi.online? Apakah masih ada hubungan dengan Pesantren Properti?</li>
+      <li><b>Konteks angka utama:</b> kenaikan 1–2 → 8–10 unit/bulan dan 60 unit organik terjadi di mana, berapa lama, dan apa peran Anda? Bolehkah nama perusahaan/proyek disebut? Arti "organik" = tanpa iklan berbayar?</li>
+      <li><b>Izin foto & kredensial:</b> apakah konsumen di foto closing sudah mengizinkan? Apa hubungan Anda dengan STIFIn Institute (sertifikasi, mitra, atau acara)?</li>
+      <li><b>Segmen & nilai:</b> apakah fokus ke developer properti syariah/komunitas muslim, atau properti umum? Apakah foto umrah dan kalimat "Sukses di dunia, mulia di akhirat" ingin ditampilkan?</li>
+    </ol>
+  </div>
+</div></section>
+
+<!-- ================= 9 ================= -->
+<section class="part" id="s9"><div class="wrap">
+  <h2>9. Penilaian jujur</h2>
+  <div class="grid2">
+    <div class="card">
+      <h4 style="color:var(--green)">Kekuatan</h4>
+      <ul>
+        <li>Ada <b>angka hasil yang spesifik</b> dan relevan dengan target (unit/bulan, unit dari Facebook). Banyak brief konsultan tidak punya ini.</li>
+        <li><b>Pengalaman lapangan nyata</b> ±6 tahun di satu perusahaan properti — menunjukkan konsistensi.</li>
+        <li>Kombinasi langka: <b>bisa menjual + bisa iklan + bisa desain</b>. Relevan untuk developer kecil-menengah yang timnya terbatas.</li>
+        <li><b>Banyak dokumentasi closing</b> — bukti visual yang kuat dan jujur.</li>
+        <li>Cerita personal menarik: closing rumah di usia 19 tahun.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color:var(--red)">Kelemahan &amp; risiko</h4>
+      <ul>
+        <li><b>Bukti sebagai konsultan belum ada.</b> Semua angka berasal dari peran in-house (sales/marketing manager), bukan dari klien konsultasi. Pengunjung bisa bertanya: "Hasilnya bisa diulang di proyek saya?"</li>
+        <li><b>Terlalu banyak peran</b>: konsultan, designer, advertiser, trainer (dengan topik termasuk AI &amp; editing). Berisiko terlihat sebagai "serba bisa" alih-alih ahli.</li>
+        <li><b>Jabatan di brief "Marketing &amp; Sales Manager"</b> tidak sama dengan positioning "Konsultan". Perlu konsisten di LinkedIn/sosmed juga.</li>
+        <li><b>Tidak ada testimoni, kontak, harga, atau detail layanan.</b></li>
+        <li><b>Kesan usia muda</b> bisa jadi kekuatan cerita, tapi bisa menurunkan kepercayaan developer senior bila tidak diimbangi bukti.</li>
+        <li><b>Privasi</b>: foto konsumen dipakai tanpa kejelasan izin.</li>
+        <li>Brief memiliki salah ketik ("Roperty", "Megajar", "Dropshiper") — jangan sampai terbawa ke website.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h4>Saran perbaikan</h4>
+    <ol>
+      <li><b>Persempit layanan utama</b> menjadi satu: "Pendampingan &amp; Instalasi Sistem Penjualan Properti". Desain/ads dan pelatihan diposisikan sebagai bagian/pendukung, bukan setara.</li>
+      <li><b>Kumpulkan 3 testimoni bernama</b> dari mantan atasan, owner proyek, agen binaan, atau peserta kelas — dalam 2–4 minggu. Ini mengisi celah terbesar.</li>
+      <li><b>Tulis 1 studi kasus</b> dari pengalaman 1–2 → 8–10 unit/bulan (kondisi awal, apa yang diubah, hasil, durasi). Ini menjembatani "pengalaman in-house" ke "bisa membantu Anda".</li>
+      <li><b>Buat penawaran masuk yang jelas</b>, mis. "Sesi bedah penjualan <span class="ph">[ISI: durasi]</span>" dengan hasil konkret (daftar masalah + 3 prioritas perbaikan).</li>
+      <li><b>Foto profesional</b> dengan pakaian semi-formal; hindari lanyard dan pose jempol untuk hero.</li>
+      <li>Mulai dengan struktur ringkas (8 section) lalu tambah testimoni &amp; studi kasus saat datanya siap.</li>
+    </ol>
+  </div>
+</div></section>
+
+<footer>Rencana-website.html · Tahap 1 · Menunggu keputusan: opsi tema, section yang dipertahankan/dihapus, dan jawaban 5 pertanyaan.</footer>
+</body>
+</html>
